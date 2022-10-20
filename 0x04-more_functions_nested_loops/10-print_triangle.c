@@ -17,7 +17,7 @@ void print_triangle(int size)
 			for (tri = size - hash; tri > 0; tri--)
 				putchar(' ');
 
-			for (tri = 0; tri < tri; tri++)
+			for (tri = 0; tri < hash; tri++)
 				_putchar('#');
 
 			if (hash == size)
