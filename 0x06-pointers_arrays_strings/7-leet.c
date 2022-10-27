@@ -8,20 +8,20 @@
  */
 char *leet(char *str)
 {
-	char mapping_low[8] = {'o', 'l', '\0', 'e', 'a', '\0', '\0', 't'};
-	char mapping_upper[8] = {'O', 'L', '\0', 'E', 'A', '\0', '\0', 'T'};
-	int i = 0;
-	char replacement = str;
-	
-	while (i < 8)
+	int index1 = 0, index2;
+	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
+
+	while (str[index1])
 	{
-		if (str == mapping_low[i] || str == mapping_upper[i])
+		for (index2 = 0; index2 <= 7; index2++)
 		{
-			replacement = i + '0';
-			break;
+			if (str[index1] == leet[index2] ||
+			str[index1] - 32 == leet[index2])
+			str[index1] = index2 + '0';
 		}
-		i++;
+
+		index1++;
 	}
 
-	return (replacement);
+	return (str);
 }
