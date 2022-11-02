@@ -9,11 +9,11 @@
  */
 int sqrt(int n, int b)
 {
-	if (n * n == b)
-		return (n);
-	if (n * n > b)
+	if (b * b == n)
+		return (b);
+	else if (b * b > n)
 		return (-1);
-	return (sqrt_check(n + 1, b));
+	return (sqrt(b + 1, n));
 }
 
 /**
@@ -24,7 +24,6 @@ int sqrt(int n, int b)
  */
 int _sqrt_recursion(int n)
 {
-	if (n == 0)
-		return (0);
-	return (sqrt_check(1, n));
+
+	return (sqrt(1, n));
 }
