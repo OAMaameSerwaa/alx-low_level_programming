@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- * sqrt - Calculates natural square root
- * @n: number to calculate the square root of
- * @b: number that iterates from 1 to n
+ * sqrt_check - Calculates natural square root
+ * @a: number to calculate the square root of
+ * @c: number that iterates from 1 to n
  *
- * Return: squrt of b or -1 for error
+ * Return: squrt of c or -1 for error
  */
-int sqrt(int n, int b)
+int sqrt_check(int a, int c)
 {
-	if (b * b == n)
-		return (b);
-	else if (b * b > n)
+	if (a * a == c)
+		return (a);
+	else if (a * a > c)
 		return (-1);
-	return (sqrt(b + 1, n));
+	return (sqrt_check(a + 1, c));
 }
 
 /**
@@ -24,6 +24,7 @@ int sqrt(int n, int b)
  */
 int _sqrt_recursion(int n)
 {
-
-	return (sqrt(1, n));
+	if (n == 0)
+		return (0);
+	return (sqrt_check(1, n));
 }
