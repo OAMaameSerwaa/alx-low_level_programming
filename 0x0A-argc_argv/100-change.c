@@ -33,10 +33,10 @@ int coinConverter(int i)
 		else
 			i -= 1;
 
-		count++;
+		ct++;
 	}
 
-	return (count);
+	return (ct);
 }
 
 /**
