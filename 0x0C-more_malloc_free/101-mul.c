@@ -189,8 +189,8 @@ int main(int argc, char *argv[])
 	for (index = find_len(argv[2]) - 1; index >= 0; index--)
 	{
 		digit = get_digit(*(argv[2] + index));
-		get_prod(next_p, argv[1], digit, zeroes++);
-		add_nums(final_p, next_p, size - 1);
+		get_prod(next_prod argv[1], digit, zeroes++);
+		add_nums(final_prod, next_prod, size - 1);
 	}
 	for (index = 0; final_prod[index]; index++)
 	{
