@@ -163,7 +163,7 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
  */
 int main(int argc, char *argv[])
 {
-	char *final_prod, *next_prod;
+	char *final_p, *next_p;
 	int size, index, digit, zeroes = 0;
 
 	if (argc != 3)
@@ -183,24 +183,24 @@ int main(int argc, char *argv[])
 	}
 
 	size = find_len(argv[1]) + find_len(argv[2]);
-	final_prod = create_xarray(size + 1);
-	next_prod = create_xarray(size + 1);
+	final_p = create_xarray(size + 1);
+	next_p = create_xarray(size + 1);
 
 	for (index = find_len(argv[2]) - 1; index >= 0; index--)
 	{
 		digit = get_digit(*(argv[2] + index));
-		get_prod(next_prod argv[1], digit, zeroes++);
-		add_nums(final_prod, next_prod, size - 1);
+		get_prod(next_p, argv[1], digit, zeroes++);
+		add_nums(final_p, next_p, size - 1);
 	}
-	for (index = 0; final_prod[index]; index++)
+	for (index = 0; final_p[index]; index++)
 	{
-		if (final_prod[index] != 'x')
-			putchar(final_prod[index]);
+		if (final_p[index] != 'x')
+			putchar(final_p[index]);
 	}
 	putchar('\n');
 
-	free(next_prod);
-	free(final_prod);
+	free(next_p);
+	free(final_p);
 
 	return (0);
 }
