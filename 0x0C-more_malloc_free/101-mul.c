@@ -15,11 +15,11 @@ void add_nums(char *final_prod, char *next_prod, int next_len);
  */
 int find_len(char *str)
 {
-	int leng = 0;
+	int l = 0;
 
 	while (*str++)
-		leng++;
-	return (leng);
+		l++;
+	return (l);
 }
 
 /**
@@ -189,7 +189,7 @@ int main(int argc, char *argv[])
 	for (index = find_len(argv[2]) - 1; index >= 0; index--)
 	{
 		digit = get_digit(*(argv[2] + index));
-		get_p(next_p, argv[1], digit, zeroes++);
+		get_prod(next_p, argv[1], digit, zeroes++);
 		add_nums(final_p, next_p, size - 1);
 	}
 	for (index = 0; final_p[index]; index++)
